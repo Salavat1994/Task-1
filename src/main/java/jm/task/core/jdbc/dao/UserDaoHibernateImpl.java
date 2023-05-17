@@ -5,6 +5,7 @@ import jm.task.core.jdbc.util.Util;
 import org.hibernate.Session;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
@@ -68,14 +69,13 @@ public class UserDaoHibernateImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        List<User> list;
+        List<User> list = new ArrayList<>();
         try (Session session = Util.sessionFactory().openSession()) {
             session.beginTransaction();
             list = session.createQuery("FROM Users", User.class).list();
             session.getTransaction().commit();
         } catch (SQLException e) {
             e.printStackTrace();
-            return null;
         }
         return list;
     }
