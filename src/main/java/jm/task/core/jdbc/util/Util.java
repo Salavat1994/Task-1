@@ -1,18 +1,11 @@
 package jm.task.core.jdbc.util;
 
-
 import jm.task.core.jdbc.model.User;
-import org.hibernate.Session;
-import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Map;
-import java.util.Properties;
-import java.util.logging.Logger;
+
 
 public class Util {
     // реализуйте настройку соеденения с БД

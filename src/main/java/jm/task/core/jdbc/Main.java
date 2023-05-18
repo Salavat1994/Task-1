@@ -19,9 +19,9 @@ public class Main {
 
         List<User> list = userService.getAllUsers();
         for (User user : list){
-            System.out.println(user);
+            System.out.println(user.toString());
         }
-        userService.removeUserById(2);
+
         userService.cleanUsersTable();
         userService.dropUsersTable();
 
