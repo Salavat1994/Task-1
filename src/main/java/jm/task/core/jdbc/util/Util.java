@@ -2,6 +2,8 @@ package jm.task.core.jdbc.util;
 
 
 import jm.task.core.jdbc.model.User;
+import org.hibernate.Session;
+import org.hibernate.SessionBuilder;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -10,6 +12,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Map;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class Util {
     // реализуйте настройку соеденения с БД
@@ -17,8 +20,9 @@ public class Util {
     public static final String username = "postgres";
     public static final String userpassword = "root";
     public static final String driver_class = "org.postgresql.Driver";
+    private static SessionFactory sessionFactory;
 
-    public static SessionFactory sessionFactory;
+    //public static SessionFactory getSessionFactory;
 
     public static SessionFactory sessionFactory() throws SQLException {
         if (sessionFactory == null) {
@@ -32,5 +36,6 @@ public class Util {
         }
         return sessionFactory;
     }
+
 
 }
